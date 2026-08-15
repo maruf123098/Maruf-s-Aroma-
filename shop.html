@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমাদের আতর শপ - সুগন্ধি বিলাস</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
+
+        body {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 27, 75, 0.95)), 
+                        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;
+            color: #fff;
+            padding: 40px 20px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .shop-header { text-align: center; margin-bottom: 50px; }
+        .shop-header h1 { 
+            font-size: 40px; 
+            background: linear-gradient(to right, #fbbf24, #f43f5e, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .stall-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .stall-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stall-card:hover { 
+            transform: translateY(-8px); 
+            border-color: #f43f5e; 
+            box-shadow: 0 15px 30px rgba(244, 63, 94, 0.3); 
+        }
+
+        .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+
+        .card-body { padding: 20px; text-align: center; }
+        .card-title { font-size: 20px; color: #fbbf24; margin-bottom: 8px; font-weight: 700; }
+        .card-price { font-size: 20px; font-weight: 700; color: #4ade80; margin-bottom: 15px; }
+
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #f43f5e, #e11d48);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .order-btn:hover { background: linear-gradient(45deg, #e11d48, #9333ea); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="shop-header">
+            <h1>প্রিমিয়াম আতর কালেকশন</h1>
+            <p>আপনার পছন্দের সুগন্ধি বেছে নিন এবং সরাসরি অর্ডার করুন</p>
+        </div>
+
+        <div class="stall-grid">
+            
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=400" class="card-img" alt="রয়্যাল ওউদ">
+                <div class="card-body">
+                    <h3 class="card-title">রয়্যাল ওউদ</h3>
+                    <p class="card-price">৳৭৫০</p>
+                    <a href="order.html?item=রয়্যাল ওউদ&price=750" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=400" class="card-img" alt="হোয়াইট মাস্ক">
+                <div class="card-body">
+                    <h3 class="card-title">হোয়াইট মাস্ক</h3>
+                    <p class="card-price">৳৫৫০</p>
+                    <a href="order.html?item=হোয়াইট মাস্ক&price=550" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=400" class="card-img" alt="সুলতান">
+                <div class="card-body">
+                    <h3 class="card-title">সুলতান</h3>
+                    <p class="card-price">৳৯৯০</p>
+                    <a href="order.html?item=সুলতান&price=990" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=400" class="card-img" alt="আম্বার ওউদ">
+                <div class="card-body">
+                    <h3 class="card-title">আম্বার ওউদ</h3>
+                    <p class="card-price">৳১,২০০</p>
+                    <a href="order.html?item=আম্বার ওউদ&price=1200" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=400" class="card-img" alt="রোজ বাকোরাত">
+                <div class="card-body">
+                    <h3 class="card-title">রোজ বাকোরাত</h3>
+                    <p class="card-price">৳৪৫০</p>
+                    <a href="order.html?item=রোজ বাকোরাত&price=450" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=400" class="card-img" alt="ধলম ওউদ">
+                <div class="card-body">
+                    <h3 class="card-title">ধলম ওউদ</h3>
+                    <p class="card-price">৳১,৮০০</p>
+                    <a href="order.html?item=ধলম ওউদ&price=1800" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=400" class="card-img" alt="চকলেট মাস্ক">
+                <div class="card-body">
+                    <h3 class="card-title">চকলেট মাস্ক</h3>
+                    <p class="card-price">৳৩৯০</p>
+                    <a href="order.html?item=চকলেট মাস্ক&price=390" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=400" class="card-img" alt="ব্ল্যাক ওফিয়াম">
+                <div class="card-body">
+                    <h3 class="card-title">ব্ল্যাক ওফিয়াম</h3>
+                    <p class="card-price">৳৬৫০</p>
+                    <a href="order.html?item=ব্ল্যাক ওফিয়াম&price=650" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=400" class="card-img" alt="বুলগেরিয়ান রোজ">
+                <div class="card-body">
+                    <h3 class="card-title">বুলগেরিয়ান রোজ</h3>
+                    <p class="card-price">৳৪৯০</p>
+                    <a href="order.html?item=বুলগেরিয়ান রোজ&price=490" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=400" class="card-img" alt="চন্দন কাঠ">
+                <div class="card-body">
+                    <h3 class="card-title">চন্দন কাঠ</h3>
+                    <p class="card-price">৳৭৯০</p>
+                    <a href="order.html?item=চন্দন কাঠ&price=790" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=400" class="card-img" alt="কুল ওয়াটার">
+                <div class="card-body">
+                    <h3 class="card-title">কুল ওয়াটার</h3>
+                    <p class="card-price">৳৪৯০</p>
+                    <a href="order.html?item=কুল ওয়াটার&price=490" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+            <div class="stall-card">
+                <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=400" class="card-img" alt="কম্বো প্যাক">
+                <div class="card-body">
+                    <h3 class="card-title">কম্বো প্যাক</h3>
+                    <p class="card-price">৳১,৯৯০</p>
+                    <a href="order.html?item=কম্বো প্যাক&price=1990" class="order-btn">অর্ডার করুন</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+  </html>
+                  
