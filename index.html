@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maruf's Aroma | Royal Perfume Collection</title>
+    <title>Maruf's Aroma | Eid Mubarak Special Edition</title>
     <style>
         * {
             margin: 0;
@@ -14,24 +14,104 @@
         }
 
         body {
-            background: #0a0a0c;
+            background: #08070d;
             color: #fff;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* Header Navigation */
+        /* Eid Theme Animated Background (Kids Celebrating, Moon & Stars) */
+        .eid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to bottom, #0a0814 0%, #17112b 60%, #0d0a18 100%);
+            overflow: hidden;
+        }
+
+        /* Glowing Moon */
+        .moon {
+            position: absolute;
+            top: 50px;
+            right: 80px;
+            width: 90px;
+            height: 90px;
+            background: #ffeaa7;
+            border-radius: 50%;
+            box-shadow: 0 0 40px #fdcb6e, 0 0 80px rgba(253, 203, 110, 0.4);
+        }
+
+        .moon::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            width: 90px;
+            height: 90px;
+            background: #0a0814;
+            border-radius: 50%;
+        }
+
+        /* Sparkling Stars */
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Animated Cartoon Kids Silhouette / Vectors (Celebrating Eid) */
+        .kids-vector-art {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 220px;
+            background: url('https://img.freepik.com/free-vector/happy-eid-mubarak-kids-character-illustration_23-2148881232.jpg') center/cover no-repeat;
+            opacity: 0.15;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
+            mask-image: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+        }
+
+        /* Decorative Floating Eid Lights / Lanterns */
+        .lantern {
+            position: absolute;
+            top: -20px;
+            width: 35px;
+            height: 60px;
+            background: linear-gradient(45deg, #d4af37, #ffd700);
+            border-radius: 10px 10px 20px 20px;
+            box-shadow: 0 0 25px #ffd700;
+            animation: swing 3s infinite ease-in-out alternate;
+            transform-origin: top center;
+        }
+
+        @keyframes swing {
+            0% { transform: rotate(-8deg); }
+            100% { transform: rotate(8deg); }
+        }
+
+        /* Navbar */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background: rgba(10, 10, 12, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 8, 20, 0.85);
+            backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .logo {
@@ -39,7 +119,7 @@
             font-weight: bold;
             color: #d4af37;
             letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
             text-decoration: none;
         }
 
@@ -52,95 +132,152 @@
         }
 
         .nav-links a:hover, .nav-links a.active {
-            color: #d4af37;
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd700;
         }
 
-        /* Hero Section (3D Look) */
+        /* Hero Showcase Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 120px 8% 50px;
-            background: radial-gradient(circle at center, #1a1508 0%, #0a0a0c 70%);
+            padding: 130px 8% 60px;
             position: relative;
             flex-wrap: wrap;
         }
 
         .hero-text {
             max-width: 550px;
+            z-index: 2;
+        }
+
+        .eid-tag {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid #d4af37;
+            color: #ffd700;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
         }
 
         .hero-text h1 {
-            font-size: 48px;
-            color: #d4af37;
+            font-size: 46px;
+            color: #ffd700;
             margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            line-height: 1.25;
+            text-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
         }
 
         .hero-text p {
-            color: #ccc;
+            color: #e0e0e0;
             font-size: 16px;
             margin-bottom: 35px;
-            line-height: 1.6;
+            line-height: 1.7;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid #d4af37;
         }
 
         .btn-gold {
-            padding: 15px 35px;
-            background: linear-gradient(45deg, #b8860b, #ffd700);
+            padding: 16px 36px;
+            background: linear-gradient(45deg, #b8860b, #ffd700, #b8860b);
+            background-size: 200%;
             color: #000;
             font-weight: bold;
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+            transition: 0.4s;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 17px;
         }
 
         .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.9);
+            background-position: right center;
         }
 
-        /* 3D Visual Box */
+        /* 3D Product Image Container */
         .product-3d-box {
             position: relative;
-            width: 450px;
+            width: 440px;
             max-width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 20px;
+            z-index: 2;
         }
 
         .product-img {
             width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
-            animation: float 4s ease-in-out infinite;
+            border-radius: 20px;
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.4);
+            animation: float3D 4s ease-in-out infinite;
         }
 
-        @keyframes float {
+        @keyframes float3D {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(1deg); }
+            50% { transform: translateY(-18px) rotate(1.5deg); }
         }
 
-        /* Glowing Background Effect */
-        .glow-effect {
+        /* Kids Joy / Hugging Vignette Floating Badges */
+        .joy-badge {
             position: absolute;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(0,0,0,0) 70%);
-            z-index: 1;
-            pointer-events: none;
+            bottom: -15px;
+            left: -20px;
+            background: rgba(22, 21, 28, 0.9);
+            border: 1px solid #d4af37;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 13px;
+            color: #ffd700;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.98); }
+            100% { transform: scale(1.04); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 34px; }
+            .hero { padding-top: 110px; text-align: center; }
+            .hero-text p { text-align: left; }
+            .moon { width: 60px; height: 60px; right: 20px; top: 70px; }
+            .moon::after { width: 60px; height: 60px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- ঈদ থিম ব্যাকগ্রাউন্ড (চাঁদ, তারা ও বাচ্চাদের ঈদের আনন্দময় পরিবেশ) -->
+    <div class="eid-background">
+        <div class="moon"></div>
+        <div class="lantern" style="left: 10%;"></div>
+        <div class="lantern" style="left: 88%;"></div>
+        
+        <!-- Stars -->
+        <div class="star" style="top: 15%; left: 20%; width: 3px; height: 3px;"></div>
+        <div class="star" style="top: 25%; left: 70%; width: 4px; height: 4px; animation-delay: 0.5s;"></div>
+        <div class="star" style="top: 40%; left: 40%; width: 2px; height: 2px; animation-delay: 1s;"></div>
+        <div class="star" style="top: 60%; left: 85%; width: 3px; height: 3px; animation-delay: 1.5s;"></div>
+
+        <!-- Kids Celebrating Art Silhouette -->
+        <div class="kids-vector-art"></div>
+    </div>
 
     <!-- নেভিগেশন বার -->
     <nav>
@@ -151,19 +288,24 @@
         </div>
     </nav>
 
-    <!-- ১ম পেজ: ৩ডি প্রোডাক্ট হোম পেজ -->
+    <!-- ৩ডি প্রোডাক্ট ও ঈদ স্পেশাল সেকশন -->
     <section class="hero">
-        <div class="glow-effect"></div>
         <div class="hero-text">
-            <h1>রাজকীয় সুবাসের আভিজাত্য</h1>
-            <p>অনুভব করুন ৩ডি দুর্গের মতো তৈরি খাঁটি গোল্ডেন অ্যারোমার রাজকীয় অভিজ্ঞতা। আপনার ব্যক্তিত্বকে করে তুলুন আরও আভিজাত্যময় ও আকর্ষণীয়।</p>
-            <a href="order.html" class="btn-gold">এখনই অর্ডার করুন</a>
+            <span class="eid-tag">🌙 ঈদ মোবারক স্পেশাল এডিশন</span>
+            <h1>ঈদের খুশিতে রাজকীয় আভিজাত্যের সুবাস</h1>
+            <p>ছোটদের হাসিখুশি কোলাকুলি ও আনন্দের এই পবিত্র ঈদে নিজেকে সাজিয়ে তুলুন ৩ডি দুর্গের মতো তৈরি খাঁটি গোল্ডেন অ্যারোমার আভিজাত্যে। আপনার ব্যক্তিত্ব হোক সবার চেয়ে আকর্ষণীয়।</p>
+            <a href="order.html" class="btn-gold">এখনই অর্ডার করুন ➔</a>
         </div>
+
         <div class="product-3d-box">
-            <!-- আপনার ইমেজের নাম বা ফাইল লিংক এখানে দিন -->
-            <img src="perfume.png">
+            <!-- আপনার পারফিউমের ছবিটি এখানে শো করবে -->
+            <img src="perfume.png" alt="Maruf's Aroma 3D Perfume" class="product-img">
+            <div class="joy-badge">
+                <span>✨</span> ঈদের সেরা উপহার - Maruf's Aroma
+            </div>
         </div>
     </section>
 
 </body>
-</html>
+            </html>
+            
