@@ -3,279 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maruf's Aroma | Royal Perfume Collection</title>
+    <title>সুগন্ধি বিলাস - প্রিমিয়াম আতর শপ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
+        
         body {
-            background: #060508;
-            color: #fff;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* --- Ambient Royal Fragrance Background --- */
-        .fragrance-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at 50% 30%, #201709 0%, #0c0a10 60%, #050407 100%);
-            overflow: hidden;
-        }
-
-        /* Golden Fragrance Smoke / Aura Effect */
-        .aroma-aura {
-            position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
-            filter: blur(50px);
-            animation: pulseAroma 6s infinite alternate ease-in-out;
-        }
-
-        @keyframes pulseAroma {
-            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.9; }
-        }
-
-        /* Floating Flower Petals (Aroma Scent Feel) */
-        .petal {
-            position: absolute;
-            background: rgba(212, 175, 55, 0.6);
-            border-radius: 15px 0 15px 0;
-            animation: floatPetal 8s infinite linear;
-            filter: blur(1px);
-        }
-
-        @keyframes floatPetal {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            50% { opacity: 0.8; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-        }
-
-        /* Joyful Kids Silhouette Art (No Text Background) */
-        .kids-bg-art {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 250px;
-            background: url('https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
-            opacity: 0.12;
-            filter: sepia(100%) hue-rotate(10deg) saturate(200%);
-            mask-image: linear-gradient(to top, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-        }
-
-        /* Navbar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(6, 5, 8, 0.85);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d4af37;
-            letter-spacing: 3px;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-            text-decoration: none;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-            font-size: 15px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #ffd700;
-            text-shadow: 0 0 10px #ffd700;
-        }
-
-        /* Main Showcase Area */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 130px 8% 60px;
-            position: relative;
-            flex-wrap: wrap;
-        }
-
-        .hero-text {
-            max-width: 550px;
-            z-index: 2;
-        }
-
-        .fragrance-tag {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.12);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            color: #ffd700;
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-        }
-
-        .hero-text h1 {
-            font-size: 48px;
-            color: #ffd700;
-            margin-bottom: 20px;
-            line-height: 1.25;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
-        }
-
-        .hero-text p {
-            color: #d8d8d8;
-            font-size: 16px;
-            margin-bottom: 35px;
-            line-height: 1.8;
-            background: rgba(15, 12, 20, 0.5);
-            padding: 18px;
-            border-radius: 12px;
-            border-left: 3px solid #d4af37;
-            backdrop-filter: blur(5px);
-        }
-
-        .btn-gold {
-            padding: 16px 38px;
-            background: linear-gradient(45deg, #b8860b, #ffd700, #b8860b);
-            background-size: 200%;
-            color: #000;
-            font-weight: bold;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
-            transition: 0.4s;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 17px;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.9);
-            background-position: right center;
-        }
-
-        /* 3D Attar Bottle Showcase */
-        .product-3d-box {
-            position: relative;
-            width: 450px;
-            max-width: 100%;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
-            z-index: 2;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 27, 75, 0.95)), 
+                        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
         }
 
-        .product-img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 0 60px rgba(212, 175, 55, 0.45);
-            animation: float3D 4.5s ease-in-out infinite;
+        .hero-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 50px 30px;
+            border-radius: 30px;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
-        @keyframes float3D {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-16px) rotate(1.5deg); }
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #fbbf24, #f43f5e, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .aroma-badge {
-            position: absolute;
-            bottom: -15px;
-            left: -10px;
-            background: rgba(18, 15, 24, 0.95);
-            border: 1px solid #d4af37;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-size: 13px;
-            color: #ffd700;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        p {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
-            .hero-text h1 { font-size: 34px; }
-            .hero { padding-top: 110px; text-align: center; }
-            .hero-text p { text-align: left; }
+        .cta-button {
+            display: inline-block;
+            padding: 16px 36px;
+            background: linear-gradient(45deg, #f43f5e, #9333ea);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(244, 63, 94, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(244, 63, 94, 0.6);
         }
     </style>
 </head>
 <body>
 
-    <!-- রাজকীয় সুবাস ও আনন্দের ব্যাকগ্রাউন্ড -->
-    <div class="fragrance-bg">
-        <div class="aroma-aura"></div>
-
-        <!-- বাতাসে ভেসে থাকা সুবাসের পাপড়ি -->
-        <div class="petal" style="left: 10%; width: 12px; height: 12px; animation-delay: 0s;"></div>
-        <div class="petal" style="left: 30%; width: 16px; height: 16px; animation-delay: 2s;"></div>
-        <div class="petal" style="left: 60%; width: 10px; height: 10px; animation-delay: 4s;"></div>
-        <div class="petal" style="left: 85%; width: 14px; height: 14px; animation-delay: 1s;"></div>
-
-        <!-- আনন্দের মুহূর্তের আবহ (ব্যাকগ্রাউন্ড) -->
-        <div class="kids-bg-art"></div>
+    <div class="hero-section">
+        <h1>সুগন্ধি বিলাস</h1>
+        <p>আপনার বিশেষ মুহূর্তগুলোকে আরও স্মরণীয় করতে আমরা নিয়ে এসেছি সেরা মানের প্রিমিয়াম আতর। আপনার পছন্দের সুগন্ধি বেছে নিতে এখনই আমাদের শপে প্রবেশ করুন।</p>
+        
+        <a href="shop.html" class="cta-button">শপে প্রবেশ করুন</a>
     </div>
 
-    <!-- নেভিগেশন বার -->
-    <nav>
-        <a href="index.html" class="logo">MARUF'S AROMA</a>
-        <div class="nav-links">
-            <a href="index.html" class="active">হোম</a>
-            <a href="order.html">অর্ডার করুন</a>
-        </div>
-    </nav>
-
-    <!-- ৩ডি আতর শোকেস -->
-    <section class="hero">
-        <div class="hero-text">
-            <span class="fragrance-tag">✨ খাঁটি রাজকীয় সুগন্ধি</span>
-            <h1>মন জুড়ানো আভিজাত্যের নিখুঁত ঘ্রাণ</h1>
-            <p>প্রতিটি ফোঁটায় অনুভব করুন আত্মাকে শান্ত করা এক স্বর্গীয় সুবাস। হাসিখুশি প্রতিটি আনন্দময় মুহূর্তে আপনার উপস্থিতিকে করে তুলুন অনন্য ও অবিস্মরণীয়।</p>
-            <a href="order.html" class="btn-gold">এখনই সংগ্রহ করুন ➔</a>
-        </div>
-
-        <div class="product-3d-box">
-            <!-- আপনার পারফিউমের ছবিটি এখানে শো করবে -->
-            <img src="perfume.png" alt="Maruf's Aroma Premium Attar" class="product-img">
-            <div class="aroma-badge">
-                <span>🌸</span> দীর্ঘস্থায়ী খাঁটি অ্যারোমা এসেন্স
-            </div>
-        </div>
-    </section>
-
 </body>
-    </html>
-    
+</html>
